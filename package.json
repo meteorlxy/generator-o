@@ -1,0 +1,113 @@
+{
+  "name": "generator-o",
+  "version": "0.0.0",
+  "description": "Yeoman generator",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "homepage": "https://github.com/meteorlxy/generator-o",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meteorlxy/generator-o.git"
+  },
+  "license": "MIT",
+  "author": "meteorlxy <meteorlxy@foxmail.com>",
+  "files": [
+    "generators",
+    "types"
+  ],
+  "main": "generators/app/index.js",
+  "types": "types/app/index.d.ts",
+  "scripts": {
+    "build": "npm run clean && tsc && npm run copy",
+    "clean": "rimraf generators types *.tsbuildinfo",
+    "copy": "copyfiles -a -u 1 src/**/templates/**/* src/**/templates/**/.* generators",
+    "dev": "npm run clean && tsc-watch --incremental --onSuccess \"npm run copy\"",
+    "lint": "eslint --ext .ts src",
+    "prepublishOnly": "npm run build",
+    "publish": "git push origin master:master --tags",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1 && git add CHANGELOG.md"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{json,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "package.json": [
+      "sort-package-json",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5"
+  },
+  "eslintConfig": {
+    "extends": [
+      "standard",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:import/typescript",
+      "prettier",
+      "prettier/standard",
+      "prettier/@typescript-eslint"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "root": true,
+    "rules": {
+      "prettier/prettier": "error",
+      "no-underscore-dangle": "off"
+    }
+  },
+  "eslintIgnore": [
+    "generators",
+    "types",
+    "src/**/templates/**/*"
+  ],
+  "dependencies": {
+    "has-yarn": "^2.1.0",
+    "sort-package-json": "^1.22.1",
+    "yeoman-generator": "^4.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@types/yeoman-generator": "^3.1.4",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "conventional-changelog-cli": "^2.0.23",
+    "copyfiles": "^2.1.1",
+    "eslint": "^6.2.1",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^9.0.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^3.0.1",
+    "lint-staged": "^9.2.1",
+    "prettier": "^1.18.2",
+    "rimraf": "^3.0.0",
+    "tsc-watch": "^3.0.1",
+    "typescript": "^3.6.3"
+  }
+}

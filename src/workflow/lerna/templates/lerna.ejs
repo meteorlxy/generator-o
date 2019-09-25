@@ -1,0 +1,13 @@
+{
+  "npmClient": "<%- packageManager %>",<% if (packageManager === 'yarn') { %>
+  "useWorkspaces": true,<% } %>
+  "version": "<% if (versionIndependent) { %>independent<% } else { %>0.0.0<% } %>",
+  "command": {
+    "version": {
+      "message": "build: <% if (versionIndependent) { %>publish<% } else { %>version %v<% } %>"
+    }<% if (registry) { %>,
+    "publish": {
+      "registry": "<%- registry %>"
+    }<% } %>
+  }
+}

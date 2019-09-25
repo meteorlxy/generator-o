@@ -1,0 +1,34 @@
+const path = require('path');
+
+module.exports = {
+  env: {
+    jest: true,
+  },
+
+  extends: [
+    'plugin:jest/recommended',
+    'plugin:jest/style',
+  ],
+
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['@', path.resolve(__dirname, '../src')],
+        ],
+        extensions: ['js', 'jsx'<% if (typescript) { %>, 'ts', 'tsx'<% } if (vue) { %>, 'vue'<% } %>],
+      }
+    },
+  },
+
+  rules: {
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
+      },
+    ],<% if (typescript) { %>
+
+    '@typescript-eslint/explicit-function-return-type': 'off',<% } %>
+  },
+};

@@ -1,0 +1,20 @@
+# Node modules
+node_modules/
+
+# MacOS Desktop Services Store
+.DS_Store
+
+# Log files<% if (packageManager === 'npm') { %>
+npm-debug.log*
+<% } else if (packageManager === 'yarn') { %>
+yarn-debug.log*
+yarn-error.log*
+<% } else { %>
+*.log
+<% } if (typescript) { %>
+# Typescript build info
+*.tsbuildinfo
+<% } if (coverage) { %>
+# Coverage directory
+coverage/
+<% } %>

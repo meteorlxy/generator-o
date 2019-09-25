@@ -226,6 +226,8 @@ export = class OGenerator extends BaseGenerator {
         packageManager: this.props.packageManager,
         independent: this.props.lernaVersionIndependent,
         registry: registryUrls[this.props.registry],
+        changelog: this.props.changelog,
+        test: this.props.jest,
       });
     }
 

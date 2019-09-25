@@ -4,6 +4,13 @@
   "version": "<% if (versionIndependent) { %>independent<% } else { %>0.0.0<% } %>",
   "command": {
     "version": {
+      "allowBranch": "master",<% if (changelog) { %>
+      "conventionalCommits": true,<% } %>
+      "exact": true,
+      "ignoreChanges": [<% if (test) { %>
+        "**/test/**",<% } %>
+        "**/*.md"
+      ],
       "message": "build: <% if (versionIndependent) { %>publish<% } else { %>version %v<% } %>"
     }<% if (registry) { %>,
     "publish": {

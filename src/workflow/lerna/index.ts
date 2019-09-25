@@ -7,6 +7,10 @@ export = class LernaGenerator extends BaseGenerator {
 
   private registry: string;
 
+  private changelog: boolean;
+
+  private test: boolean;
+
   constructor(args, options) {
     super(args, options);
 
@@ -27,12 +31,26 @@ export = class LernaGenerator extends BaseGenerator {
       default: 'https://registry.npmjs.org',
       description: 'registry to publish',
     });
+
+    this.option('changelog', {
+      type: Boolean,
+      default: false,
+      description: 'add changelog or not',
+    });
+
+    this.option('test', {
+      type: Boolean,
+      default: false,
+      description: 'has test or not',
+    });
   }
 
   initializing(): void {
     this.packageManager = this.options.packageManager;
     this.independent = this.options.independent;
     this.registry = this.options.registry;
+    this.changelog = this.options.changelog;
+    this.test = this.options.test;
   }
 
   writing(): void {
@@ -47,6 +65,8 @@ export = class LernaGenerator extends BaseGenerator {
         packageManager: this.packageManager,
         versionIndependent: this.independent,
         registry: this.registry,
+        changelog: this.changelog,
+        test: this.test,
       }
     );
 

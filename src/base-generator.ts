@@ -1,4 +1,5 @@
 import Generator from 'yeoman-generator';
+import ora from 'ora';
 
 export = class BaseGenerator extends Generator {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -41,6 +42,10 @@ export = class BaseGenerator extends Generator {
   }
 
   protected getPackageVersion(pkg: string): string {
-    return this.getStdoutString('npm', ['show', pkg, 'version']);
+    const spinner = ora(`Loading the latest version of package: ${pkg}`);
+    spinner.start();
+    const version = this.getStdoutString('npm', ['show', pkg, 'version']);
+    spinner.succeed(`${pkg}@${version}`);
+    return version;
   }
 };

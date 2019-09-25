@@ -101,16 +101,8 @@ export = class OGenerator extends BaseGenerator {
           { name: 'Git meta files', value: 'git' },
           { name: 'LICENSE', value: 'license' },
           { name: 'README.md', value: 'readme' },
-          { name: 'CHANGELOG', value: 'changelog' },
         ],
-        default: [
-          'vscode',
-          'editorconfig',
-          'git',
-          'license',
-          'readme',
-          'changelog',
-        ],
+        default: ['vscode', 'editorconfig', 'git', 'license', 'readme'],
       },
       {
         type: 'checkbox',
@@ -123,6 +115,7 @@ export = class OGenerator extends BaseGenerator {
           { name: 'Husky', value: 'husky' },
           { name: 'Lint staged', value: 'lint-staged' },
           { name: 'Sort package.json', value: 'sort-package-json' },
+          { name: 'Changelog', value: 'changelog' },
         ],
         default: [
           'commitlint',
@@ -131,6 +124,7 @@ export = class OGenerator extends BaseGenerator {
           'husky',
           'lint-staged',
           'sort-package-json',
+          'changelog',
         ],
       },
       {
@@ -276,7 +270,7 @@ export = class OGenerator extends BaseGenerator {
       this.composeWith(require.resolve('../workflow/sort-package-json'), {});
     }
 
-    if (this.props.changelog) {
+    if (this.props.changelog && !this.props.lerna) {
       this.composeWith(
         require.resolve('../workflow/conventional-changelog'),
         {}

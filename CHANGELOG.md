@@ -1,3 +1,11 @@
+<a name="0.4.0"></a>
+
+# [0.4.0](https://github.com/meteorlxy/generator-o/compare/v0.3.0...v0.4.0) (2019-09-26)
+
+### Features
+
+- **github:** add github meta files ([3a54a33](https://github.com/meteorlxy/generator-o/commit/3a54a33))
+
 <a name="0.3.0"></a>
 
 # [0.3.0](https://github.com/meteorlxy/generator-o/compare/v0.2.0...v0.3.0) (2019-09-25)

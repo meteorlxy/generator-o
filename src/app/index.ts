@@ -26,6 +26,7 @@ export = class OGenerator extends BaseGenerator {
     git: boolean;
     readme: boolean;
     license: boolean;
+    github: boolean;
 
     // development workflow
     lerna: boolean;
@@ -101,8 +102,16 @@ export = class OGenerator extends BaseGenerator {
           { name: 'Git meta files', value: 'git' },
           { name: 'LICENSE', value: 'license' },
           { name: 'README.md', value: 'readme' },
+          { name: 'GitHub meta files', value: 'github' },
         ],
-        default: ['vscode', 'editorconfig', 'git', 'license', 'readme'],
+        default: [
+          'vscode',
+          'editorconfig',
+          'git',
+          'license',
+          'readme',
+          'github',
+        ],
       },
       {
         type: 'checkbox',
@@ -152,6 +161,7 @@ export = class OGenerator extends BaseGenerator {
       git: answers.meta.includes('git'),
       readme: answers.meta.includes('readme'),
       license: answers.meta.includes('license'),
+      github: answers.meta.includes('github'),
 
       // workflow
       lerna: answers.lerna,
@@ -214,6 +224,15 @@ export = class OGenerator extends BaseGenerator {
         projectName: '',
         projectDesc: '',
         license: 'MIT',
+      });
+    }
+
+    if (this.props.github) {
+      this.composeWith(require.resolve('../meta/github'), {
+        pullRequestTemplate: true,
+        issueTemplate: true,
+        lockBot: true,
+        staleBot: true,
       });
     }
 

@@ -315,7 +315,7 @@ export = class OGenerator extends BaseGenerator {
     this.spawnCommandSync(
       'node',
       [
-        'node_modules/sort-package-json/index.js',
+        require.resolve('sort-package-json'),
         this.destinationPath('package.json'),
       ],
       {

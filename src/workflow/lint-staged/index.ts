@@ -80,7 +80,7 @@ export = class LintStagedGenerator extends BaseGenerator {
     if (this.prettier) {
       this.addFields({
         'lint-staged': {
-          '*.{json,md}': ['prettier --write', 'git add'],
+          '*.{json,md,yml}': ['prettier --write', 'git add'],
         },
       });
     }

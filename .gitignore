@@ -1,6 +1,5 @@
 # Dist files
 generators/
-types/
 
 # Typescript build info
 *.tsbuildinfo

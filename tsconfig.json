@@ -14,8 +14,7 @@
     "target": "es2017",
     "baseUrl": ".",
     "rootDir": "src",
-    "outDir": "generators",
-    "declarationDir": "types"
+    "outDir": "generators"
   },
   "include": ["src/**/*.ts"]
 }

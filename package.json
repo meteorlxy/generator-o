@@ -13,14 +13,13 @@
   "license": "MIT",
   "author": "meteorlxy <meteorlxy@foxmail.com>",
   "files": [
-    "generators",
-    "types"
+    "generators"
   ],
   "main": "generators/app/index.js",
-  "types": "types/app/index.d.ts",
+  "types": "generators/app/index.d.ts",
   "scripts": {
     "build": "npm run clean && tsc && npm run copy",
-    "clean": "rimraf generators types *.tsbuildinfo",
+    "clean": "rimraf generators *.tsbuildinfo",
     "copy": "copyfiles -a -u 1 src/**/templates/**/* src/**/templates/**/.* generators",
     "dev": "npm run clean && tsc-watch --incremental --onSuccess \"npm run copy\"",
     "lint": "eslint --ext .ts src",

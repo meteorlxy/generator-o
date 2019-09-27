@@ -1,15 +1,15 @@
 import BaseGenerator from '../../base-generator';
 
 export = class EslintGenerator extends BaseGenerator {
-  private lerna: boolean;
+  protected lerna: boolean;
 
-  private typescript: boolean;
+  protected typescript: boolean;
 
-  private vue: boolean;
+  protected vue: boolean;
 
-  private prettier: boolean;
+  protected prettier: boolean;
 
-  private test: boolean;
+  protected test: boolean;
 
   constructor(args, options) {
     super(args, options);

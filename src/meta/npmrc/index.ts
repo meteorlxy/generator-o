@@ -1,9 +1,9 @@
 import BaseGenerator from '../../base-generator';
 
 export = class NpmrcGenerator extends BaseGenerator {
-  private registry: string | false;
+  protected registry: string | false;
 
-  private proxy: string | false;
+  protected proxy: string | false;
 
   constructor(args, options) {
     super(args, options);

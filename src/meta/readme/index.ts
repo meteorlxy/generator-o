@@ -1,13 +1,13 @@
 import BaseGenerator from '../../base-generator';
 
 export = class ReadmeGenerator extends BaseGenerator {
-  private username: string;
+  protected username: string;
 
-  private projectName: string;
+  protected projectName: string;
 
-  private projectDesc: string;
+  protected projectDesc: string;
 
-  private license: string;
+  protected license: string;
 
   constructor(args, options) {
     super(args, options);

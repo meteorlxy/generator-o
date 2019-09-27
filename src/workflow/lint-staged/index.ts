@@ -1,15 +1,15 @@
 import BaseGenerator from '../../base-generator';
 
 export = class LintStagedGenerator extends BaseGenerator {
-  private typescript: boolean;
+  protected typescript: boolean;
 
-  private vue: boolean;
+  protected vue: boolean;
 
-  private eslint: boolean;
+  protected eslint: boolean;
 
-  private prettier: boolean;
+  protected prettier: boolean;
 
-  private sortPackageJson: boolean;
+  protected sortPackageJson: boolean;
 
   constructor(args, options) {
     super(args, options);

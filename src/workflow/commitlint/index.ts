@@ -1,7 +1,7 @@
 import BaseGenerator from '../../base-generator';
 
 export = class CommitlintGenerator extends BaseGenerator {
-  private lerna: boolean;
+  protected lerna: boolean;
 
   constructor(args, options) {
     super(args, options);

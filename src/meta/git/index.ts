@@ -1,11 +1,11 @@
 import BaseGenerator from '../../base-generator';
 
 export = class GitGenerator extends BaseGenerator {
-  private packageManager: 'npm' | 'yarn';
+  protected packageManager: 'npm' | 'yarn';
 
-  private typescript: boolean;
+  protected typescript: boolean;
 
-  private coverage: boolean;
+  protected coverage: boolean;
 
   constructor(args, options) {
     super(args, options);

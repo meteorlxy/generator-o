@@ -1,9 +1,9 @@
 import BaseGenerator from '../../base-generator';
 
 export = class HuskyGenerator extends BaseGenerator {
-  private commitlint: boolean;
+  protected commitlint: boolean;
 
-  private lintStaged: boolean;
+  protected lintStaged: boolean;
 
   constructor(args, options) {
     super(args, options);

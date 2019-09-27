@@ -1,15 +1,15 @@
 import BaseGenerator from '../../base-generator';
 
 export = class LernaGenerator extends BaseGenerator {
-  private packageManager: 'npm' | 'yarn';
+  protected packageManager: 'npm' | 'yarn';
 
-  private independent: boolean;
+  protected independent: boolean;
 
-  private registry: string;
+  protected registry: string;
 
-  private changelog: boolean;
+  protected changelog: boolean;
 
-  private test: boolean;
+  protected test: boolean;
 
   constructor(args, options) {
     super(args, options);
@@ -72,14 +72,14 @@ export = class LernaGenerator extends BaseGenerator {
 
     if (this.packageManager === 'npm') {
       this.addFields({
-        private: true,
+        protected: true,
         scripts: {
           bootstrap: `lerna bootstrap`,
         },
       });
     } else {
       this.addFields({
-        private: true,
+        protected: true,
         workspaces: ['packages/*'],
       });
     }

@@ -1,13 +1,13 @@
 import BaseGenerator from '../../base-generator';
 
 export = class GithubGenerator extends BaseGenerator {
-  private pullRequestTemplate: boolean;
+  protected pullRequestTemplate: boolean;
 
-  private issueTemplate: boolean;
+  protected issueTemplate: boolean;
 
-  private lockBot: boolean;
+  protected lockBot: boolean;
 
-  private staleBot: boolean;
+  protected staleBot: boolean;
 
   constructor(args, options) {
     super(args, options);

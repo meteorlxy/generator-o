@@ -8,7 +8,7 @@ const registryUrls = {
 };
 
 export = class OGenerator extends BaseGenerator {
-  private props: {
+  protected props: {
     packageManager: 'npm' | 'yarn';
     registry: 'default' | 'npm' | 'yarn' | 'taobao';
     template: 'base' | 'vue' | 'typescript' | 'typescript-vue';

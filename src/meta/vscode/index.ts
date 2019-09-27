@@ -1,9 +1,9 @@
 import BaseGenerator from '../../base-generator';
 
 export = class VscodeGenerator extends BaseGenerator {
-  private typescript: boolean;
+  protected typescript: boolean;
 
-  private vue: boolean;
+  protected vue: boolean;
 
   constructor(args, options) {
     super(args, options);

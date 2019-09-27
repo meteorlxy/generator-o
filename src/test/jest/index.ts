@@ -64,6 +64,7 @@ export = class JestGenerator extends BaseGenerator {
       devDeps.push('vue-jest');
       devDeps.push('jest-serializer-vue');
       devDeps.push('jest-transform-stub');
+      devDeps.push('@vue/test-utils');
 
       if (!this.typescript) {
         devDeps.push('babel-jest');

@@ -250,6 +250,7 @@ export = class OGenerator extends BaseGenerator {
     if (this.props.commitlint) {
       this.composeWith(require.resolve('../workflow/commitlint'), {
         lerna: this.props.lerna,
+        sharedConfig: '',
       });
     }
 
@@ -264,7 +265,9 @@ export = class OGenerator extends BaseGenerator {
     }
 
     if (this.props.prettier) {
-      this.composeWith(require.resolve('../workflow/prettier'), {});
+      this.composeWith(require.resolve('../workflow/prettier'), {
+        sharedConfig: '',
+      });
     }
 
     if (this.props.husky) {

@@ -1,3 +1,12 @@
+<a name="0.4.2"></a>
+
+## [0.4.2](https://github.com/meteorlxy/generator-o/compare/v0.4.1...v0.4.2) (2019-09-27)
+
+### Bug Fixes
+
+- **app:** default template typo ([2575eb0](https://github.com/meteorlxy/generator-o/commit/2575eb0))
+- **app:** resolve sort-package-json ([9d702d9](https://github.com/meteorlxy/generator-o/commit/9d702d9))
+
 <a name="0.4.1"></a>
 
 ## [0.4.1](https://github.com/meteorlxy/generator-o/compare/v0.4.0...v0.4.1) (2019-09-26)

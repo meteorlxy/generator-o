@@ -1,8 +1,5 @@
-import path from 'path';
 import BaseGenerator from '../base-generator';
 import hasYarn from 'has-yarn';
-
-const generatorRoot = path.resolve(__dirname, '../..');
 
 const registryUrls = {
   npm: 'https://registry.npmjs.org',
@@ -312,16 +309,10 @@ export = class OGenerator extends BaseGenerator {
   }
 
   install(): void {
-    this.spawnCommandSync(
-      'node',
-      [
-        require.resolve('sort-package-json'),
-        this.destinationPath('package.json'),
-      ],
-      {
-        cwd: generatorRoot,
-      }
-    );
+    this.spawnCommandSync('node', [
+      require.resolve('sort-package-json'),
+      this.destinationPath('package.json'),
+    ]);
 
     if (this.props.packageManager === 'npm') {
       this.npmInstall();

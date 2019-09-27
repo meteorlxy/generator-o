@@ -1,3 +1,11 @@
+<a name="0.4.3"></a>
+
+## [0.4.3](https://github.com/meteorlxy/generator-o/compare/v0.4.2...v0.4.3) (2019-09-27)
+
+### Bug Fixes
+
+- use protected to be extendable ([6c33d74](https://github.com/meteorlxy/generator-o/commit/6c33d74))
+
 <a name="0.4.2"></a>
 
 ## [0.4.2](https://github.com/meteorlxy/generator-o/compare/v0.4.1...v0.4.2) (2019-09-27)

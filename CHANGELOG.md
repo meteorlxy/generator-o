@@ -1,3 +1,11 @@
+<a name="0.4.4"></a>
+
+## [0.4.4](https://github.com/meteorlxy/generator-o/compare/v0.4.3...v0.4.4) (2019-09-27)
+
+### Bug Fixes
+
+- remove standalone types dir ([6564882](https://github.com/meteorlxy/generator-o/commit/6564882))
+
 <a name="0.4.3"></a>
 
 ## [0.4.3](https://github.com/meteorlxy/generator-o/compare/v0.4.2...v0.4.3) (2019-09-27)

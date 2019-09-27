@@ -1,3 +1,13 @@
+<a name="0.5.0"></a>
+
+# [0.5.0](https://github.com/meteorlxy/generator-o/compare/v0.4.4...v0.5.0) (2019-09-27)
+
+### Features
+
+- **commitlint:** sharedConfig option ([f1913d1](https://github.com/meteorlxy/generator-o/commit/f1913d1))
+- **jest:** add vue-test-utils ([0eb5a11](https://github.com/meteorlxy/generator-o/commit/0eb5a11))
+- **prettier:** sharedConfig option ([41c767b](https://github.com/meteorlxy/generator-o/commit/41c767b))
+
 <a name="0.4.4"></a>
 
 ## [0.4.4](https://github.com/meteorlxy/generator-o/compare/v0.4.3...v0.4.4) (2019-09-27)

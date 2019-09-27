@@ -90,7 +90,7 @@ export = class OGenerator extends BaseGenerator {
           { name: 'Typescript', value: 'typescript' },
           { name: 'Typescript + Vue', value: 'typescript-vue' },
         ],
-        default: 'Base',
+        default: 'base',
       },
       {
         type: 'checkbox',

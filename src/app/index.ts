@@ -56,7 +56,7 @@ export = class OGenerator extends BaseGenerator {
         name: 'lernaVersionIndependent',
         message: 'Use lerna independent mode nor not',
         default: false,
-        when: (answers): boolean => answers.lerna,
+        when: (ans): boolean => ans.lerna,
       },
       {
         type: 'list',

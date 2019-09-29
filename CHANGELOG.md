@@ -1,3 +1,11 @@
+<a name="0.5.1"></a>
+
+## [0.5.1](https://github.com/meteorlxy/generator-o/compare/v0.5.0...v0.5.1) (2019-09-29)
+
+### Bug Fixes
+
+- **npmrc:** generate npmrc in init stage ([c085136](https://github.com/meteorlxy/generator-o/commit/c085136))
+
 <a name="0.5.0"></a>
 
 # [0.5.0](https://github.com/meteorlxy/generator-o/compare/v0.4.4...v0.5.0) (2019-09-27)

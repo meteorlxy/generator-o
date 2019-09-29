@@ -1,3 +1,5 @@
+import fs from 'fs';
+import ejs from 'ejs';
 import BaseGenerator from '../../base-generator';
 
 export = class NpmrcGenerator extends BaseGenerator {
@@ -21,19 +23,16 @@ export = class NpmrcGenerator extends BaseGenerator {
     });
   }
 
-  initializing(): void {
+  async initializing(): Promise<void> {
     this.registry = this.options.registry;
     this.proxy = this.options.proxy;
-  }
 
-  writing(): void {
-    this.fs.copyTpl(
-      this.templatePath('.npmrc.ejs'),
-      this.destinationPath('.npmrc'),
-      {
-        registry: this.registry,
-        proxy: this.proxy,
-      }
-    );
+    // npmrc is useful for following process, so we generated it in `intializing` stage
+    const npmrc = await ejs.renderFile(this.templatePath('.npmrc.ejs'), {
+      registry: this.registry,
+      proxy: this.proxy,
+    });
+
+    fs.writeFileSync(this.destinationPath('.npmrc'), npmrc);
   }
 };

@@ -82,6 +82,7 @@
     "src/**/templates/**/*"
   ],
   "dependencies": {
+    "ejs": "^2.7.1",
     "generator-license": "^5.4.0",
     "has-yarn": "^2.1.0",
     "ora": "^4.0.1",
@@ -91,6 +92,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.2.0",
+    "@types/ejs": "^2.6.3",
     "@types/yeoman-generator": "^3.1.4",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",

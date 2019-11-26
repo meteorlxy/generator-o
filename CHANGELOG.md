@@ -1,3 +1,11 @@
+<a name="0.5.2"></a>
+
+## [0.5.2](https://github.com/meteorlxy/generator-o/compare/v0.5.1...v0.5.2) (2019-11-26)
+
+### Bug Fixes
+
+- typo of private field ([33d1d96](https://github.com/meteorlxy/generator-o/commit/33d1d96))
+
 <a name="0.5.1"></a>
 
 ## [0.5.1](https://github.com/meteorlxy/generator-o/compare/v0.5.0...v0.5.1) (2019-09-29)

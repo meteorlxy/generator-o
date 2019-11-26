@@ -72,14 +72,14 @@ export = class LernaGenerator extends BaseGenerator {
 
     if (this.packageManager === 'npm') {
       this.addFields({
-        protected: true,
+        private: true,
         scripts: {
           bootstrap: `lerna bootstrap`,
         },
       });
     } else {
       this.addFields({
-        protected: true,
+        private: true,
         workspaces: ['packages/*'],
       });
     }

@@ -15,7 +15,7 @@ export = class PrettierGenerator extends BaseGenerator {
 
   initializing(): void {
     this.sharedConfig = this.options.sharedConfig || {
-      semi: false,
+      semi: true,
       singleQuote: true,
       tabWidth: 2,
       trailingComma: 'es5',

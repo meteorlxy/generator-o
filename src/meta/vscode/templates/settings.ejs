@@ -9,26 +9,15 @@
     "files.trimTrailingWhitespace": false
   },
   "eslint.validate": [
-    {
-      "language": "javascript",
-      "autoFix": true
-    },
-    {
-      "language": "javascriptreact",
-      "autoFix": true
-    }<% if (typescript) { %>,
-    {
-      "language": "typescript",
-      "autoFix": true
-    },
-    {
-      "language": "typescriptreact",
-      "autoFix": true
-    }<% } if (vue) { %>,
-    {
-      "language": "vue",
-      "autoFix": true
-    }<% } %>
-  ]<% if (vue) { %>,
-  "vetur.validation.template": false<% } %>
+    "javascript",
+    "javascriptreact",
+    <%_ if (typescript) { _%>
+    "typescript",
+    "typescriptreact",
+    <%_ } if (vue) { _%>
+    "vue",
+    <%_ } _%>
+  ]<%_ if (vue) { _%>,
+  "vetur.validation.template": false
+  <%_ } _%>
 }

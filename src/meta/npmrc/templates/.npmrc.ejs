@@ -1,3 +1,6 @@
-message="build: version %s"<% if (registry) { %>
-registry="<%- registry %>"<% } %><% if (proxy) { %>
-proxy="<%- proxy %>"<% } %>
+message="build: version %s"
+<%_ if (registry) { _%>
+registry="<%- registry %>"
+<%_ } if (proxy) { _%>
+proxy="<%- proxy %>"
+<%_ } _%>

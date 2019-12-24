@@ -4,17 +4,22 @@ node_modules/
 # MacOS Desktop Services Store
 .DS_Store
 
-# Log files<% if (packageManager === 'npm') { %>
+# Log files
+<%_ if (packageManager === 'npm') { _%>
 npm-debug.log*
-<% } else if (packageManager === 'yarn') { %>
+<%_ } else if (packageManager === 'yarn') { _%>
 yarn-debug.log*
 yarn-error.log*
-<% } else { %>
+<%_ } else { _%>
 *.log
-<% } if (typescript) { %>
+<%_ } _%>
+<%_ if (typescript) { _%>
+
 # Typescript build info
 *.tsbuildinfo
-<% } if (coverage) { %>
+<%_ } _%>
+<%_ if (coverage) { _%>
+
 # Coverage directory
 coverage/
-<% } %>
+<%_ } _%>

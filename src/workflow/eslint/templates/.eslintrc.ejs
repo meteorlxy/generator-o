@@ -3,21 +3,32 @@ module.exports = {
 
   extends: [
     <%- extendsConfig.map(item => `'${item}',`).join('\n    ') %>
-  ],<% if (vue) { %>
+  ],
+  <%_ if (vue) { _%>
 
   parserOptions: {
     parser: <% if (typescript) { %>'@typescript-eslint/parser'<% } else { %>'babel-eslint'<% } %>,
-  },<% } else if (typescript) { %>
+  },
+  <%_ } else if (typescript) { _%>
 
-  parser: '@typescript-eslint/parser',<% } if (vue || typescript || prettier) { %>
+  parser: '@typescript-eslint/parser',
+  <%_ } _%>
+  <%_ if (vue || typescript || prettier) { _%>
 
-  plugins: [<% if (vue) { %>
-    'vue',<% } if (typescript) { %>
-    '@typescript-eslint',<% } if (prettier) { %>
-    'prettier',<% } %>
+  plugins: [
+    <%_ if (vue) { _%>
+    'vue',
+    <%_ } _%>
+    <%_ if (typescript) { _%>
+    '@typescript-eslint',
+    <%_ } _%>
+    <%_ if (prettier) { _%>
+    'prettier',
+    <%_ } _%>
   ],
 
-  rules: {<% if (vue) { %>
+  rules: {
+    <%_ if (vue) { _%>
     'vue/component-name-in-template-casing': [
       'error',
       'PascalCase',
@@ -32,11 +43,17 @@ module.exports = {
         extensions: [<%- exts.map(item => `'${item}'`).join(', ') %>],
         shouldMatchCase: false,
       },
-    ],<% } if (typescript) { %>
+    ],
+    <%_ } _%>
+    <%_ if (typescript) { _%>
     'no-useless-constructor': 'off',
     '@typescript-eslint/no-useless-constructor': 'error',
     'import/prefer-default-export': 'off',
-    'import/no-cycle': 'off',<% } if (prettier) { %>
-    'prettier/prettier': 'error',<% } %>
-  },<% } %>
+    'import/no-cycle': 'off',
+    <%_ } _%>
+    <%_ if (prettier) { _%>
+    'prettier/prettier': 'error',
+    <%_ } _%>
+  },
+  <%_ } _%>
 };

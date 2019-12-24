@@ -1,14 +1,20 @@
 {
-  "npmClient": "<%- packageManager %>",<% if (packageManager === 'yarn') { %>
-  "useWorkspaces": true,<% } %>
+  "npmClient": "<%- packageManager %>",
+  <%_ if (packageManager === 'yarn') { _%>
+  "useWorkspaces": true,
+  <%_ } _%>
   "version": "<% if (versionIndependent) { %>independent<% } else { %>0.0.0<% } %>",
   "command": {
     "version": {
-      "allowBranch": "master",<% if (changelog) { %>
-      "conventionalCommits": true,<% } %>
+      "allowBranch": "master",
+      <%_ if (changelog) { _%>
+      "conventionalCommits": true,
+      <%_ } _%>
       "exact": true,
-      "ignoreChanges": [<% if (test) { %>
-        "**/test/**",<% } %>
+      "ignoreChanges": [
+        <%_ if (test) { _%>
+        "**/test/**",
+        <%_ } _%>
         "**/*.md"
       ],
       "message": "build: <% if (versionIndependent) { %>publish<% } else { %>version %v<% } %>"

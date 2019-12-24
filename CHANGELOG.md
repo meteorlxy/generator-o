@@ -1,3 +1,15 @@
+<a name="0.6.0"></a>
+
+# [0.6.0](https://github.com/meteorlxy/generator-o/compare/v0.5.2...v0.6.0) (2019-12-24)
+
+### Bug Fixes
+
+- **meta:** update vscode settings ([64087a2](https://github.com/meteorlxy/generator-o/commit/64087a2))
+
+### Features
+
+- **workflow:** enable semi of prettier by default ([af656d3](https://github.com/meteorlxy/generator-o/commit/af656d3))
+
 <a name="0.5.2"></a>
 
 ## [0.5.2](https://github.com/meteorlxy/generator-o/compare/v0.5.1...v0.5.2) (2019-11-26)
